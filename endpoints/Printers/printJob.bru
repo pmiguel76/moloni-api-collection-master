@@ -1,0 +1,31 @@
+meta {
+  name: printJob
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://192-168-0-175.moloniprint.com:5080/sendJob
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: lYTg4MH0v3.8
+}
+
+body:json {
+  {
+    "printer": "{{company_id}}",
+    "job": {{print_job_json}},
+    "terminal_id": 0,
+    "tpa_port": "COM4"
+  }
+}
+
+body:form-urlencoded {
+  printer: EPSON TM-T20II Receipt5
+  job: {{print_job_json}}
+  terminal_id:
+  tpa_port: COM4
+}

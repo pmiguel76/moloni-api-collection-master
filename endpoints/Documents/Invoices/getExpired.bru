@@ -1,0 +1,19 @@
+meta {
+  name: getExpired
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://api.moloni.pt/v1/invoices/getExpired/?access_token=
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: 
+}
+
+body:form-urlencoded {
+  company_id: 
+}

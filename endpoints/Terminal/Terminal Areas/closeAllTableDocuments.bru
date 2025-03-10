@@ -1,0 +1,31 @@
+meta {
+  name: closeAllTableDocuments
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{api_url}}terminalAreas/closeAllTableDocuments/?access_token={{access_token}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "table_id": 0,
+    "date": "",
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  table_id:
+  date:
+}

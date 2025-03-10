@@ -1,0 +1,50 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}customerAlternateAddresses/update/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "address_id": 0,
+    "customer_id": 0,
+    "designation": "",
+    "code": "",
+    "address": "",
+    "city": "",
+    "zip_code": "",
+    "country_id": 0,
+    "email": "",
+    "phone": "",
+    "fax": "",
+    "contact_name": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  address_id:
+  customer_id:
+  designation:
+  code:
+  address:
+  city:
+  zip_code:
+  country_id:
+  email:
+  phone:
+  fax:
+  contact_name:
+}

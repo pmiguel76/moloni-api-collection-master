@@ -1,0 +1,31 @@
+meta {
+  name: documentCancel
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}documents/documentCancel/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "observation": 0
+  }
+}
+
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id:
+  observation:
+}

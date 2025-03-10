@@ -1,0 +1,27 @@
+meta {
+  name: printJob
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://192-168-0-175.moloniprint.com:5080/sendJob
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: lYTg4MH0v3.8
+}
+
+body:json {
+  {
+    "printer": "",
+    "job": {{print_job_json}}
+  }
+}
+
+body:form-urlencoded {
+  printer:
+  job: {{print_job_json}}
+}

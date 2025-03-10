@@ -1,0 +1,32 @@
+meta {
+  name: insert
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{api_url}}terminalDisplayDevices/insert/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  template_id:
+  ip:
+  security_key:
+  slideshow_id:
+  lastmodified:
+  lastmodifiedby:
+  type_id:
+  name:
+  description:
+  campaign_id:
+  terminals[0]:
+  number:
+}

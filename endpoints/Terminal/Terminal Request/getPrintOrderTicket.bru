@@ -1,0 +1,30 @@
+meta {
+  name: getPrintOrderTicket
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{api_url}}terminalRequests/getPrintOrderTicket/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  request_id:
+  terminal_id:
+  printer[alias]:
+  group_by_category:
+  request_product[0][request_product_id]:
+  request_product[0][qty]:
+}
+
+vars:post-response {
+  print_job_json: res.body
+}

@@ -1,0 +1,39 @@
+meta {
+  name: count
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}supplierReceipts/count/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "supplier_id": 0,
+    "document_set_id": 0,
+    "number": 0,
+    "date": "",
+    "year": 0,
+    "your_reference": "",
+    "our_reference": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  supplier_id:
+  document_set_id:
+  number:
+  year:
+  your_reference:
+  our_reference:
+}

@@ -1,0 +1,35 @@
+meta {
+  name: getByEmail
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}salesmen/getByEmail/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "email": "",
+    "exact": 1,
+    "qty": 0,
+    "offset": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  email:
+  exact:
+  qty:
+  offset:
+}
+

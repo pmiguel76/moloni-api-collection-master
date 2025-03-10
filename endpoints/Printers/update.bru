@@ -1,0 +1,59 @@
+meta {
+  name: update
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{api_url}}printers/update/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  printer_id: 0
+  terminal_id: 0
+  daemon_id: 0
+  hash:
+  name: CITIZEN CT-S310II
+  available: 1
+  is_default: 0
+  is_deleted: 0
+  status: 0
+  online: 0
+  drawer_closed: 0
+  cover_closed: 0
+  paper_being_fed: 0
+  paper_end_stop: 0
+  generic_error: 0
+  mechanical_error: 0
+  auto_cutter_error: 0
+  unrecoverable_error: 0
+  auto_recoverable_error: 0
+  paper_near_end: 0
+  no_paper: 0
+  inserted: 2020-12-11 12:22:45
+  updated: 2020-12-11 12:22:45
+  type: MPC
+  ip: 192.168.0.161
+  security_key: zMDgwYX0v3.5
+  device_id: local_printer
+  normal_line_width: 48
+  condensed_line_width: 64
+  dot_width: 576
+  has_drawer: 1
+  has_cutter: 1
+  low_density: 0
+  image_print_mode: 0
+  alternative_charset: 0
+  replace_accented_chars: 0
+  table_divider_char: ─
+  is_kitchen: 1
+  alias: asdasd
+}

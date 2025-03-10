@@ -1,0 +1,104 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}supplierReturnNotes/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: json
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "date": "",
+    "document_set_id": 0,
+    "supplier_id": 0,
+    "our_reference": "",
+    "your_reference": "",
+    "financial_discount": 0,
+    "products": [
+        {
+            "product_id": 0,
+            "name": "",
+            "summary": "",
+            "qty": 0,
+            "price": 0,
+            "discount": 0,
+            "deduction_id": 0,
+            "order": 0,
+            "exemption_reason": "",
+            "warehouse_id": 0,
+            "properties": [
+                {
+                    "title": "",
+                    "value": 0
+                }
+            ],
+            "taxes": [
+                {
+                    "tax_id": 0,
+                    "value": 0,
+                    "order": 0,
+                    "cumulative": 0
+                }
+            ]
+        }
+    ],
+    "payments": [
+        {
+            "payment_method_id": 0,
+            "date": "",
+            "value": 0,
+            "notes": ""
+        }
+    ],
+    "exchange_currency_id": 0,
+    "exchange_rate": 0,
+    "notes": "",
+    "status": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id:
+  date:
+  document_set_id:
+  supplier_id:
+  our_reference:
+  your_reference:
+  financial_discount:
+  products[0][product_id]:
+  products[0][name]:
+  products[0][summary]:
+  products[0][qty]:
+  products[0][price]:
+  products[0][discount]:
+  products[0][deduction_id]:
+  products[0][order]:
+  products[0][exemption_reason]:
+  products[0][warehouse_id]:
+  products[0][properties][0][title]:
+  products[0][properties][0][value]:
+  products[0][taxes][0][tax_id]:
+  products[0][taxes][0][value]:
+  products[0][taxes][0][order]:
+  products[0][taxes][0][cumulative]:
+  payments[0][payment_method_id]:
+  payments[0][date]:
+  payments[0][value]:
+  payments[0][notes]:
+  exchange_currency_id:
+  exchange_rate:
+  notes:
+  status:
+}

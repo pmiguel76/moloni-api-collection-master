@@ -1,0 +1,32 @@
+meta {
+  name: getBySearch
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{api_url}}stores/getBySearch/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "search": "",
+    "name": "",
+    "dashboard_favorite_products": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  search: Abrantes
+  name: AWESOME
+  dashboard_favorite_products[0]:
+}

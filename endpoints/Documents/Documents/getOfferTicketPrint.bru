@@ -1,0 +1,40 @@
+meta {
+  name: getOfferTicketPrint
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}documents/getOfferTicketPrint/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "products": [
+        {
+            "product_id": 0,
+            "qty": 0
+        }
+    ]
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id:
+  products[0][product_id]:
+  products[0][qty]:
+}
+
+vars:post-response {
+  print_job_json: res.body
+}

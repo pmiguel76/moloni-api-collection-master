@@ -1,0 +1,31 @@
+meta {
+  name: countByNumber
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}salesmen/countByNumber/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "number": "",
+    "exact": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  number:
+  number:
+}
+

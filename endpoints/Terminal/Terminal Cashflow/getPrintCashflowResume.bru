@@ -1,0 +1,34 @@
+meta {
+  name: getPrintCashflowResume
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{api_url}}cashflow/getPrintCashflowResume/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "cashflow_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  cashflow_id:
+}
+
+vars:post-response {
+  print_job_json: res.body
+}

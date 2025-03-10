@@ -1,0 +1,48 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}warehouses/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "title": "",
+    "is_default": "",
+    "code": "",
+    "address": "",
+    "city": "",
+    "zip_code": "",
+    "country_id": "",
+    "phone": "",
+    "fax": "",
+    "contact_name": "",
+    "contact_email": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  title:
+  is_default:
+  code:
+  address:
+  city:
+  zip_code:
+  country_id:
+  phone:
+  fax:
+  contact_name:
+  contact_email:
+}

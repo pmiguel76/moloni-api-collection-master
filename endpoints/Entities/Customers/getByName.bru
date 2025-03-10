@@ -1,0 +1,33 @@
+meta {
+  name: getByName
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}customers/getByName/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "name": "",
+    "qty": 0,
+    "offset": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  name:
+  qty:
+  offset:
+}
+

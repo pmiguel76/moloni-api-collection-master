@@ -1,0 +1,28 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}deliveryMethods/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "name": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  name:
+}

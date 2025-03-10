@@ -1,0 +1,36 @@
+meta {
+  name: sendMail
+  type: http
+  seq: 20
+}
+
+post {
+  url: {{api_url}}documents/sendMail/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: 
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "name": "",
+    "email": "",
+    "email_cc": "",
+    "msg": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id: 
+  name: 
+  email: 
+  email_cc: 
+  msg: 
+}

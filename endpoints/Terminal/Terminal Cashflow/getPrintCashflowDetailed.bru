@@ -1,0 +1,32 @@
+meta {
+  name: getPrintCashflowDetailed
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{api_url}}cashflow/getPrintCashflowDetailed/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+}
+
+vars:post-response {
+  print_job_json: res.body
+}

@@ -1,0 +1,31 @@
+meta {
+  name: getLastCostPrice
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}products/getLastCostPrice/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "product_id": 0,
+    "supplier_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  product_id:
+  supplier_id:
+}
+

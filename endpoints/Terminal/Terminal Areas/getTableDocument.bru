@@ -1,0 +1,29 @@
+meta {
+  name: getTableDocument
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{api_url}}terminalAreas/getTableDocument/?access_token={{access_token}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "table_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  table_id:
+}

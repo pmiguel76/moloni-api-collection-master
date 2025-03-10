@@ -1,0 +1,52 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}identificationTemplates/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "name": "",
+    "business_name": "",
+    "email": "",
+    "address": "",
+    "zip_code": "",
+    "country_id": "",
+    "phone "",
+    "fax": "",
+    "website": "",
+    "notes": "",
+    "documents_footnote": "",
+    "email_sender_name": "",
+    "email_sender_address": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  name:
+  business_name:
+  email:
+  address:
+  zip_code:
+  country_id:
+  phone:
+  fax:
+  website:
+  notes:
+  documents_footnote:
+  email_sender_name:
+  email_sender_address:
+}

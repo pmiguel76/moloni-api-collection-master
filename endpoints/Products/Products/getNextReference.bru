@@ -1,0 +1,26 @@
+meta {
+  name: getNextReference
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}products/getNextReference/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}"
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+}

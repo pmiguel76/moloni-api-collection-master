@@ -1,0 +1,29 @@
+meta {
+  name: showAll
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{api_url}}printers/getAll/?access_token={{access_token}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "is_kitchen": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  is_kitchen:
+}

@@ -1,0 +1,48 @@
+meta {
+  name: getOne
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}invoiceReceipts/getOne/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "customer_id": 0,
+    "supplier_id": 0,
+    "salesman_id": 0,
+    "document_set_id": 0,
+    "number": 0,
+    "date": "",
+    "expiration_date": "",
+    "year": 0,
+    "your_reference": "",
+    "our_reference": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id:
+  customer_id:
+  supplier_id:
+  salesman_id:
+  document_set_id:
+  number:
+  expiration_date:
+  year:
+  your_reference:
+  our_reference:
+}
+

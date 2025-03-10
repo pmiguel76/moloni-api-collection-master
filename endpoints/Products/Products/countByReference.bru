@@ -1,0 +1,29 @@
+meta {
+  name: countByReference
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}products/countByReference/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "reference": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  reference:
+}
+

@@ -1,0 +1,29 @@
+meta {
+  name: CashflowPrintJob
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://192-168-0-154.moloniprint.com:5080/sendJob
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: kYjFjOX0v3.5
+}
+
+body:json {
+  {
+    "printer": "{{company_id}}",
+    "job": {{print_job_json}},
+    "tpa_port": ""
+  }
+}
+
+body:form-urlencoded {
+  printer: CITIZEN CT-S310II
+  job: {{print_job_json}}
+  ~tpa_port: COM4
+}

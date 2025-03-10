@@ -1,0 +1,30 @@
+meta {
+  name: getOne
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{api_url}}cashflow/getOne/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "cashflow_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  cashflow_id:
+}

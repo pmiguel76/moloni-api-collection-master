@@ -1,0 +1,56 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}salesmen/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: json
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+     "company_id": "{{company_id}}",
+     "vat": "",
+     "number": "",
+     "name": "",
+     "base_commission": 0,
+     "language_id": 0,
+     "qty_copies_document": 0,
+     "notes": "",
+     "address": "",
+     "zip_code": "",
+     "city": "",
+     "country_id": 0,
+     "email": "",
+     "website": "",
+     "phone": "",
+     "fax": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  vat:
+  number:
+  name:
+  base_commission:
+  language_id:
+  qty_copies_document:
+  notes:
+  address:
+  zip_code:
+  city:
+  country_id:
+  email:
+  website:
+  phone:
+  fax:
+}

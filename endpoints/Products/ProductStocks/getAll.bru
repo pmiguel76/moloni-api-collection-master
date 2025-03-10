@@ -1,0 +1,37 @@
+meta {
+  name: getAll
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}productStocks/getAll/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "product_id": 0,
+    "movement_date": "",
+    "warehouse_id": 0,
+    "qty": 0,
+    "offset": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  product_id:
+  movement_date:
+  warehouse_id:
+  qty:
+  offset:
+}
+

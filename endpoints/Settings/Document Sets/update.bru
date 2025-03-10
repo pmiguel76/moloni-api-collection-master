@@ -1,0 +1,36 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}documentSets/update/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_set_id": 0,
+    "name": "",
+    "cash_vat_scheme_indicator": "",
+    "active_by_default": "",
+    "template_id": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_set_id:
+  name:
+  cash_vat_scheme_indicator:
+  active_by_default:
+  template_id:
+}

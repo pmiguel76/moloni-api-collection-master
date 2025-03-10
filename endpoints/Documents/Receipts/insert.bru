@@ -1,0 +1,70 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}receipts/insert/?access_token={{access_token}}&{{enable_debug}}
+  body: json
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "date": "",
+    "document_set_id": 0,
+    "customer_id": 0,
+    "our_reference": "",
+    "your_reference": "",
+    "alternate_address_id": 0,
+    "net_value": 0,
+    "associated_documents": [
+        {
+            "associated_id": 0,
+            "value": 0
+        }
+    ],
+    "payments": [
+        {
+            "payment_method_id": 0,
+            "date": "",
+            "value": 0,
+            "notes": ""
+        }
+    ],
+    "related_documents_notes": "",
+    "exchange_currency_id": 0,
+    "exchange_rate": 0,
+    "notes": "",
+    "status": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  date:
+  document_set_id:
+  customer_id:
+  our_reference:
+  your_reference:
+  alternate_address_id:
+  net_value:
+  associated_documents[0][associated_id]:
+  associated_documents[0][value]:
+  related_documents_notes:
+  payments[0][payment_method_id]:
+  payments[0][date]:
+  payments[0][value]:
+  payments[0][notes]:
+  exchange_currency_id:
+  exchange_rate:
+  notes:
+  status:
+}

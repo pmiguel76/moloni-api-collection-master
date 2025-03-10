@@ -1,0 +1,36 @@
+meta {
+  name: ATInsertCode
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}documentSets/ATInsertCode/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_set_id": "",
+    "document_type_id": "",
+    "document_set_at_code": "",
+    "initial_num": "",
+    "initial_date": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_set_id:
+  document_type_id:
+  document_set_at_code:
+  initial_num:
+  initial_date:
+}

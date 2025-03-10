@@ -1,0 +1,44 @@
+meta {
+  name: insert
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{api_url}}terminals/insert/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  name:
+  dashboard_favorite_products: [0]
+  allowed_categories: [0]
+  allowed_payment_methods: [0]
+  terminal_id:
+  default_document_type_id: 1
+  uses_dashboard_favorites: 0
+  document_settings[0][document_type_id]: 1
+  document_settings[0][document_set_id]: 1
+  document_settings[0][num_copies]: 3
+  document_settings[0][allowed]: 0
+  document_settings[0][footer]:
+  print_mode: 2
+  default_document_type_id: 1
+  default_payment_method_id: 0
+  document_settings[0][document_type]:
+  document_settings[0][document_set_id]:
+  default_document_search_qty: 20
+  default_customer_search_qty: 20
+  default_products_search_qty: 20
+  uses_virtual_keyboard: 1
+  uses_dashboard_favorites: 1
+  open_drawer: 1
+  print_products_reference: 1
+}

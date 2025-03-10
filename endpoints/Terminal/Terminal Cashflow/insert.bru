@@ -1,0 +1,28 @@
+meta {
+  name: insert
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{api_url}}cashflow/insert/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  type_id:
+  parent_id:
+  value:
+  notes:
+  payments[0][payment_method_id]:
+  payments[0][value]:
+  document_id:
+}

@@ -1,0 +1,118 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}ownAssetsMovementGuides/update/?access_token={{access_token}}&{{enable_debug}}
+  body: json
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "document_id": 0,
+    "date": "",
+    "document_set_id": 0,
+    "customer_id": 0,
+    "alternate_address_id": 0,
+    "our_reference": "",
+    "your_reference": "",
+    "products": [
+        {
+            "product_id": 0,
+            "name": "",
+            "summary": "",
+            "qty": 0,
+            "price": 0,
+            "discount": 0,
+            "deduction_id": 0,
+            "order": 0,
+            "exemption_reason": "",
+            "warehouse_id": 0,
+            "properties": [
+                {
+                    "title": "",
+                    "value": 0
+                }
+            ],
+            "taxes": [
+                {
+                    "tax_id": 0,
+                    "value": 0,
+                    "order": 0,
+                    "cumulative": 0
+                }
+            ]
+        }
+    ],
+    "exchange_currency_id": 0,
+    "exchange_rate": 0,
+    "delivery_method_id": 0,
+    "delivery_datetime": "",
+    "delivery_departure_address": "",
+    "delivery_departure_city": "",
+    "delivery_departure_zip_code": "",
+    "delivery_departure_country": 0,
+    "delivery_destination_address": "",
+    "delivery_destination_city": "",
+    "delivery_destination_zip_code": "",
+    "delivery_destination_country": 0,
+    "vehicle_id": 0,
+    "vehicle_name": "",
+    "vehicle_number_plate": "",
+    "notes": "",
+    "status": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  document_id:
+  date:
+  document_set_id:
+  customer_id:
+  alternate_address_id:
+  our_reference:
+  your_reference:
+  products[0][product_id]:
+  products[0][name]:
+  products[0][summary]:
+  products[0][qty]:
+  products[0][price]:
+  products[0][discount]:
+  products[0][deduction_id]:
+  products[0][order]:
+  products[0][exemption_reason]:
+  products[0][warehouse_id]:
+  products[0][properties][0][title]:
+  products[0][properties][0][value]:
+  products[0][taxes][0][tax_id]:
+  products[0][taxes][0][value]:
+  products[0][taxes][0][order]:
+  products[0][taxes][0][cumulative]:
+  exchange_currency_id:
+  exchange_rate:
+  delivery_method_id:
+  delivery_datetime:
+  delivery_departure_address:
+  delivery_departure_city:
+  delivery_departure_zip_code:
+  delivery_departure_country:
+  delivery_destination_address:
+  delivery_destination_city:
+  delivery_destination_zip_code:
+  delivery_destination_country:
+  vehicle_id:
+  vehicle_name:
+  vehicle_number_plate:
+  notes:
+  status:
+}

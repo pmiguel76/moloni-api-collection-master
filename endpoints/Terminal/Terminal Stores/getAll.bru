@@ -1,0 +1,32 @@
+meta {
+  name: getAll
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}stores/getAll/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0,
+    "name": "",
+    "dashboard_favorite_products": []
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+  name:
+  dashboard_favorite_products[0]:
+}

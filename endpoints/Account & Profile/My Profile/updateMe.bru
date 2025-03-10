@@ -1,0 +1,23 @@
+meta {
+  name: updateMe
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}users/updateMe/?access_token={{access_token}}&{{enable_debug}}
+  body: multipartForm
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}: 
+}
+
+body:multipart-form {
+  ~name: 
+  ~email: 
+  ~cellphone: 
+  ~language_id: 
+}

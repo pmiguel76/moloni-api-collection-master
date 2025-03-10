@@ -1,0 +1,29 @@
+meta {
+  name: searchByCountry
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}taxes/searchByCountry/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "country_id": 1
+  }
+}
+
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  country_id: 1
+}

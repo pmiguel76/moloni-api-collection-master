@@ -1,0 +1,28 @@
+meta {
+  name: getActiveCashflow
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{api_url}}v2/cashflow/getActiveCashflow/?access_token={{access_token}}&human_errors=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  human_errors: true
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+}

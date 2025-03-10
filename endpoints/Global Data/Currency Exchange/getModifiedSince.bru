@@ -1,0 +1,26 @@
+meta {
+  name: getModifiedSince
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}currencyExchange/getModifiedSince/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}: 
+}
+
+body:json {
+  {
+    "lastmodified": ""
+  }
+}
+
+body:form-urlencoded {
+  lastmodified:
+}

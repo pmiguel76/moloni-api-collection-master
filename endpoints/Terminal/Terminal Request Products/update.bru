@@ -1,0 +1,34 @@
+meta {
+  name: update
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{api_url}}terminalRequestProducts/update/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "request_id": 0,
+    "request_product_id": 0,
+    "product_id": 0,
+    "paid": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  request_id:
+  request_product_id:
+  product_id:
+  paid:
+}

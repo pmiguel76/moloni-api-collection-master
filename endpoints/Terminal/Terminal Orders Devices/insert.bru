@@ -1,0 +1,30 @@
+meta {
+  name: insert
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{api_url}}terminalOrdersDevices/insert/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  type_id:
+  terminal_id:
+  name:
+  ip:
+  security_key:
+  description:
+  connectWithAll:
+  associations[0][terminal_id]:
+  associations[0][device_associated_id]:
+  device_id:
+}

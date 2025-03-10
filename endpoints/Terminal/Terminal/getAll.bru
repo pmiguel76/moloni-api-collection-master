@@ -1,0 +1,27 @@
+meta {
+  name: getAll
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}terminals/getAll/?access_token={{access_token}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "has_requests": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  has_requests: 0
+}

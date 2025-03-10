@@ -1,0 +1,74 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}suppliers/update/?access_token={{access_token}}&{{enable_debug}}
+  body: json
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+     "company_id": "{{company_id}}",
+     "supplier_id": 0,
+     "vat": "",
+     "number": "",
+     "name": "",
+     "language_id": 0,
+     "address": "",
+     "zip_code": "",
+     "city": "",
+     "country_id": 0,
+     "email": "",
+     "website": "",
+     "phone": "",
+     "fax": "",
+     "contact_name": "",
+     "contact_email": "",
+     "contact_phone": "",
+     "notes": "",
+     "maturity_date_id": 0,
+     "discount": 0,
+     "credit_limit": 0,
+     "qty_copies_document": 0,
+     "payment_method_id": 0,
+     "delivery_method_id": 0,
+     "field_notes": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  supplier_id:
+  vat:
+  number:
+  name:
+  language_id:
+  address:
+  zip_code:
+  city:
+  country_id:
+  email:
+  website:
+  phone:
+  fax:
+  contact_name:
+  contact_email:
+  contact_phone:
+  notes:
+  maturity_date_id:
+  discount:
+  credit_limit:
+  qty_copies_document:
+  payment_method_id:
+  delivery_method_id:
+  field_notes:
+}

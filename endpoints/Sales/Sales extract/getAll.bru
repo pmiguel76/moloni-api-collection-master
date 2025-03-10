@@ -1,0 +1,28 @@
+meta {
+  name: getAll
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}salesExtract/getAll/?access_token={{access_token}}&{{debug}}&json=true
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "clients": []
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  clients[0]:
+}

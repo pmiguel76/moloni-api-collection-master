@@ -1,0 +1,27 @@
+meta {
+  name: update
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{api_url}}terminalRequests/update/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  date_end:
+  notes:
+  terminal_id:
+  request_id:
+  products[0][product_id]:
+  products[0][request_product_id]:
+  products[0][status]:
+}

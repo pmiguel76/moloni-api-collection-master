@@ -1,0 +1,32 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}economicActivityClassificationCodes/update/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "eac_id": 0,
+    "code": "",
+    "description": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  eac_id:
+  code:
+  description:
+}

@@ -1,0 +1,29 @@
+meta {
+  name: countBySearch
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}products/countBySearch/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "search": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  search:
+}
+

@@ -1,0 +1,17 @@
+vars {
+  api_domain: https://api.moloni.pt
+  api_version: v2
+  api_url: {{api_domain}}/{{api_version}}/
+  grant_type: password
+  username: {{process.env.USERNAME}}
+  password: {{process.env.PASSWORD}}
+  client_id: {{process.env.CLIENT_ID}}
+  client_secret: {{process.env.CLIENT_SECRET}}
+  company_id: {{process.env.COMPANY_ID}}
+  enable_debug: XDEBUG_SESSION_START=PHPSTORM
+  enable_json: json=true
+}
+vars:secret [
+  access_token,
+  refresh_token
+]

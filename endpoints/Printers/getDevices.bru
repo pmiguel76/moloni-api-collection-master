@@ -1,0 +1,28 @@
+meta {
+  name: getDevices
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{api_url}}printers/getDevices/?access_token={{access_token}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "terminal_id": 0
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  terminal_id:
+}
+

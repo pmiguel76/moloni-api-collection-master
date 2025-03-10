@@ -1,0 +1,93 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}products/update/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "product_id": 0,
+    "category_id": 0,
+    "type": 0,
+    "name": "",
+    "summary": "",
+    "reference": "",
+    "ean": "",
+    "price": 0,
+    "unit_id": 0,
+    "has_stock": 0,
+    "stock": 0,
+    "minimum_stock": 0,
+    "pos_favorite": 0,
+    "at_product_category": "",
+    "exemption_reason": "",
+    "taxes": [
+        {
+            "tax_id": 0,
+            "value": 0,
+            "order": 0,
+            "cumulative": 0
+        }
+    ],
+    "suppliers": [
+        {
+            "supplier_id": 0,
+            "cost_price": 0,
+            "reference": ""
+        }
+    ],
+    "properties": [
+        {
+            "property_id": 0,
+            "value": 0
+        }
+    ],
+    "warehouses": [
+        {
+            "warehouse_id": 0,
+            "stock": 0
+        }
+    ]
+  }
+}
+body:form-urlencoded {
+  company_id: {{company_id}}
+  product_id:
+  category_id":
+  type:
+  name:
+  summary:
+  reference:
+  ean:
+  price:
+  unit_id:
+  has_stock:
+  stock:
+  minimum_stock:
+  pos_favorite:
+  at_product_category:
+  exemption_reason:
+  taxes[0][tax_id]:
+  taxes[0][value]:
+  taxes[0][order]:
+  taxes[0][cumulative]:
+  suppliers[0][supplier_id]:
+  suppliers[0][cost_price]:
+  suppliers[0][reference]:
+  properties[0][property_id]:
+  properties[0][value]:
+  warehouses[0][warehouse_id]:
+  warehouses[0][stock]:
+}

@@ -1,0 +1,33 @@
+meta {
+  name: insert
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}terminalRequests/insert/?access_token={{access_token}}&{{debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{debug}}: null
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  date_end:
+  notes:
+  status:
+  terminal_id:
+  products[0][product_id]:
+  products[0][qty]:
+  products[0][qty_paid]:
+  customer_name:
+  customer_phone:
+  customer_address:
+  type_id:
+  date_delivery:
+  table_id:
+}

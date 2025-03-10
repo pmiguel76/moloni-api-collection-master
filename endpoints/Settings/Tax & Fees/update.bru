@@ -1,0 +1,44 @@
+meta {
+  name: update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}taxes/update/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}:
+}
+
+body:json {
+  {
+    "company_id": "{{company_id}}",
+    "tax_id": 0,
+    "value": "",
+    "type": "",
+    "saft_type": "",
+    "vat_type": "",
+    "stamp_tax": "",
+    "exemption_reason": "",
+    "fiscal_zone": "",
+    "active_by_default": ""
+  }
+}
+
+body:form-urlencoded {
+  company_id: {{company_id}}
+  tax_id:
+  value:
+  type:
+  saft_type:
+  vat_type:
+  stamp_tax:
+  exemption_reason:
+  fiscal_zone:
+  active_by_default:
+}
