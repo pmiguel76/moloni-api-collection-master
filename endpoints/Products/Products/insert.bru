@@ -6,13 +6,13 @@ meta {
 
 post {
   url: {{api_url}}products/insert/?access_token={{access_token}}&{{enable_debug}}
-  body: json
+  body: formUrlEncoded
   auth: none
 }
 
 params:query {
   access_token: {{access_token}}
-  {{enable_debug}}:
+  {{enable_debug}}: 
 }
 
 body:json {
@@ -64,29 +64,29 @@ body:json {
 
 body:form-urlencoded {
   company_id: {{company_id}}
-  category_id:
-  type:
-  name:
-  summary:
-  reference:
-  ean:
-  price:
-  unit_id:
-  has_stock:
-  stock:
-  minimum_stock:
-  pos_favorite:
-  at_product_category:
-  exemption_reason:
-  taxes[0][tax_id]:
-  taxes[0][value]:
-  taxes[0][order]:
-  taxes[0][cumulative]:
-  suppliers[0][supplier_id]:
-  suppliers[0][cost_price]:
-  suppliers[0][reference]:
-  properties[0][property_id]:
-  properties[0][value]:
-  warehouses[0][warehouse_id]:
-  warehouses[0][stock]:
+  category_id: 
+  type: 
+  name: 
+  summary: 
+  reference: 
+  ean: 
+  price: 
+  unit_id: 
+  has_stock: 
+  stock: 
+  minimum_stock: 
+  pos_favorite: 
+  at_product_category: 
+  exemption_reason: 
+  taxes[0][tax_id]: 
+  taxes[0][value]: 
+  taxes[0][order]: 
+  taxes[0][cumulative]: 
+  suppliers[0][supplier_id]: 
+  suppliers[0][cost_price]: 
+  suppliers[0][reference]: 
+  properties[0][property_id]: 
+  properties[0][value]: 
+  warehouses[0][warehouse_id]: 
+  warehouses[0][stock]: 
 }
