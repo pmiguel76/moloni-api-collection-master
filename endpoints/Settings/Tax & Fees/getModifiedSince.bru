@@ -5,14 +5,14 @@ meta {
 }
 
 post {
-  url: {{api_url}}taxes/searchByName/?access_token={{access_token}}&{{debug}}
+  url: {{api_url}}taxes/getModifiedSince/?access_token={{access_token}}&{{debug}}
   body: formUrlEncoded
   auth: none
 }
 
 params:query {
   access_token: {{access_token}}
-  {{debug}}: null
+  {{debug}}: 
 }
 
 body:json {
@@ -24,5 +24,7 @@ body:json {
 
 body:form-urlencoded {
   company_id: {{company_id}}
-  name:
+  lastmodified: 
+  qty: 
+  offset: 
 }
