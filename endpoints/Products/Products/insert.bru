@@ -6,7 +6,7 @@ meta {
 
 post {
   url: {{api_url}}products/insert/?access_token={{access_token}}&{{enable_debug}}
-  body: formUrlEncoded
+  body: json
   auth: none
 }
 
@@ -89,4 +89,9 @@ body:form-urlencoded {
   properties[0][value]: 
   warehouses[0][warehouse_id]: 
   warehouses[0][stock]: 
+}
+
+body:multipart-form {
+  : 
+  : @file()
 }
