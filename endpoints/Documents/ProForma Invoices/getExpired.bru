@@ -1,0 +1,20 @@
+meta {
+  name: getExpired
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{api_url}}proFormaInvoices/getExpired/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}: 
+}
+
+body:form-urlencoded {
+  company_id: 
+}
