@@ -1,7 +1,7 @@
 meta {
-  name: getAll
+  name: getAllByDate
   type: http
-  seq: 1
+  seq: 2
 }
 
 post {
@@ -12,19 +12,14 @@ post {
 
 params:query {
   access_token: {{access_token}}
-  {{debug}}: null
-}
-
-body:json {
-  {
-    "company_id": "{{company_id}}",
-    "clients": []
-  }
+  {{debug}}: 
+  json: true
 }
 
 body:form-urlencoded {
-  company_id: {{company_id}}
+  company_id: 
   customer_id: 
+  offset: 
   start_date: 
   end_date: 
 }
