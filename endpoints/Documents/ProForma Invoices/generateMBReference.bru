@@ -1,0 +1,22 @@
+meta {
+  name: generateMBReference
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{api_url}}proFormaInvoices/generateMBReference/?access_token={{access_token}}&{{enable_debug}}
+  body: formUrlEncoded
+  auth: none
+}
+
+params:query {
+  access_token: {{access_token}}
+  {{enable_debug}}: 
+}
+
+body:form-urlencoded {
+  company_id: 
+  document_id: 
+  value: 
+}
